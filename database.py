@@ -20,7 +20,7 @@ def load_queue_from_db():
     queue=[]
     
     for row in result.all():
-      queue.append(dict(zip(row.keys(), row.values())))
+      queue.append(dict(row._asdict()))
     print(queue)
     return queue
 
