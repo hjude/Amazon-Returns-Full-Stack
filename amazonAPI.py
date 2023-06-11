@@ -21,10 +21,10 @@ from sp_api.util import throttle_retry, load_all_pages
 
 
 credentials = dict(
-    refresh_token="Atzr|IwEBIAbu5jL6wKJEdWcsVx-scRZjpjFK1Vndsc2BXSRTAgYz2LT5WY5JXACexdrd5vntxZylPWEyY768uYyFoO27mrU_N6UFG9VjgrZpr-UCca_RS2P77e51jF1QKjypj3nge3yhiccyB8sM8o4PYseb4Q-L4YqVQfH7iNh9AEtRXYxNDDEm19RDgRsd8JPOF20FmvQ8eRRiMUlORkQ2P5Ot-YMQBM9TNs0k4KIS1pMUg0B9NlqqcQwbdo9V3QNVKXD9Ulp-qtlj9hQT8hWYxvOpPJVD0pkHdcUFc5gU-9E3GJ7p8SZsWT37zuGN91WPecmFFTENurwcP_p1DzLM64dbCuel",
-    lwa_app_id="amzn1.application-oa2-client.02b4885695e74873b1a9534b068c0810",
-    lwa_client_secret="amzn1.oa2-cs.v1.5b40648db52e497a9725adfa22a4602d94b3c4ddea83ce8e27aedd49195af546",
-    aws_access_key="AKIARSUVGYT7QKTLV4OD",
+    refresh_token=REFRESH_TOKEN,
+    lwa_app_id=LWA_APP_ID,
+    lwa_client_secret=LWA_CLIENT_SECRET,
+    aws_access_key=AWS_ACCESS_KEY,
     aws_secret_key="Uv6V9/05p94ame5I30u3mH0C8KwsD//8E/Znr62w",  
     role_arn="arn:aws:iam::108760843519:role/New_Role"
 )
