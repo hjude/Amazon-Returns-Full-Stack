@@ -76,7 +76,7 @@ def delete(tracking):
 def add_tracking_id():
     tracking_id = request.form
     add_tracking_id_to_queue(tracking_id['added_track'])
-      return redirect('/')
+    return redirect('/')
     
     try:
       add_tracking_id_to_queue(tracking_id['added_track'])
