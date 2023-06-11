@@ -20,8 +20,8 @@ def load_queue_from_db():
     queue=[]
     
     for row in result.all():
-      queue.append(dict(row._asdict()))
-    print(queue)
+      queue.append(dict(row._asdict()))   #dict(row)
+    #print(queue)
     return queue
 
 def delete_trackingID_from_queue_db(trackingID):

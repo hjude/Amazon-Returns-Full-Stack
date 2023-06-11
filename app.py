@@ -28,8 +28,8 @@ def index():
 @app.route('/refresh_returns_and_inventory')
 def refresh():
     try:
-        #db.session.delete(task_to_delete)
-        #db.session.commit()
+        #remove the previous return details from db
+        #and add the new return details to db
         return redirect('/')
     except:
         return 'There was a problem refreshing your returns'
@@ -49,8 +49,8 @@ def get_info_on_track():
     #update the database to include data for the return
 
     try:
-        db.session.delete(task_to_delete)
-        db.session.commit()
+        #db.session.delete(task_to_delete)
+        #db.session.commit()
         return redirect('/')
     except:
         return 'There was a problem getting the info for this return'
