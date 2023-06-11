@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 #from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from database import engine, load_queue_from_db, load_returnDetails_from_db, load_tracking_id_to_search
+from database import engine, load_queue_from_db, load_returnDetails_from_db, load_tracking_id_to_search, delete_trackingID_from_queue_db, add_tracking_id_to_queue
 
 
 app = Flask(__name__)
@@ -60,20 +60,28 @@ def increase_inventory():
   #take the tracking id's in the queue and increase inventory by the return order amount for each
    return redirect('/')
 
-@app.route('/delete/<int:id>')
-def delete(id):
-    task_to_delete = TrackingIDS.query.get_or_404(id)
-
+@app.route('/delete/<tracking>')
+def delete(tracking):
+  
     try:
-        #db.session.delete(task_to_delete)
-        #db.session.commit()
-      
+        delete_trackingID_from_queue_db(tracking)
         return redirect('/')
     except:
         return 'There was a problem deleting that task'
 
 
+@app.route('/add_trackingID', methods=['POST', 'GET'])
+def add_tracking_id():
+    tracking_id = request.form
+    
+    try:
+      add_tracking_id_to_queue(tracking_id['added_track'])
+      return redirect('/')
 
+    except:
+      return 'There was a problem adding the Tracking ID to your queue'
+      
+  
 
 """  
      

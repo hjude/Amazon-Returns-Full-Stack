@@ -24,6 +24,18 @@ def load_queue_from_db():
     print(queue)
     return queue
 
+def delete_trackingID_from_queue_db(trackingID):
+  with engine.connect() as conn:
+    query = text("DELETE FROM tracking_ids WHERE tracking_ids.tracking = :tracking_id")
+
+    conn.execute(query, tracking_id=trackingID)
+
+def add_tracking_id_to_queue(trackingID):
+  with engine.connect() as conn:
+    query = text("INSERT INTO tracking_ids (tracking) VALUES (:tracking_id)")
+
+    conn.execute(query, tracking_id=trackingID)
+ 
 def load_returnDetails_from_db():
   with engine.connect() as conn:
     result = conn.execute(text("select * from return_details"))

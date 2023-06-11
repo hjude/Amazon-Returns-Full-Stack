@@ -117,7 +117,7 @@
 					<td>{{ task['tracking'] }}</td>
 				  <td></td>
 					<td>
-						<a href="/delete/{{task['id']}}">Delete</a>
+						<a href="/delete/{{task['tracking']}}">Delete</a>
 						<br>
 						<a href="/update/{{task.id}}">Update</a>
 					</td>
@@ -127,9 +127,9 @@
 		{% endif %}
 	
 		<div class="form">
-			<form action="/" method="POST">
-				<input type="text" name="content" id="content">
-				<input type="submit" value="Add Task">
+			<form action="/add_trackingID" method="POST">
+				<input type="text" name="added_track" id="content">
+				<input type="submit" value="Add Tracking ID">
 			</form>
 		</div>
 	</div>
