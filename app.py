@@ -62,6 +62,8 @@ def increase_inventory():
 
 @app.route('/delete/<tracking>')
 def delete(tracking):
+    delete_trackingID_from_queue_db(tracking)
+    return redirect('/')
   
     try:
         delete_trackingID_from_queue_db(tracking)
@@ -73,6 +75,8 @@ def delete(tracking):
 @app.route('/add_trackingID', methods=['POST', 'GET'])
 def add_tracking_id():
     tracking_id = request.form
+    add_tracking_id_to_queue(tracking_id['added_track'])
+      return redirect('/')
     
     try:
       add_tracking_id_to_queue(tracking_id['added_track'])
