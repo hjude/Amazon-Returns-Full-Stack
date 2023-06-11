@@ -12,12 +12,16 @@ engine = create_engine(
   })
 
 
+
+
 def load_queue_from_db():
   with engine.connect() as conn:
     result = conn.execute(text("select * from tracking_ids"))
     queue=[]
+    
     for row in result.all():
       queue.append(dict(row))
+    print(queue)
     return queue
 
 def load_returnDetails_from_db():

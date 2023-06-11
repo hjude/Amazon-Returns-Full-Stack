@@ -19,7 +19,7 @@ def index():
   if (returnDetails and tracking_id):  #if they exist
     tasks = queue
     #TrackingIDS.query.order_by(TrackingIDS.date_created).all()
-    return render_template('home.html', tasks=tasks, passed_value = output_data, tracking_id=tracking_id)
+    return render_template('home.html', tasks=tasks, passed_value = returnDetails, tracking_id=tracking_id)
         
 
   else: 

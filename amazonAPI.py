@@ -15,17 +15,17 @@ from datetime import datetime, timedelta
 from sp_api.base import Marketplaces
 from sp_api.api import Orders
 from sp_api.util import throttle_retry, load_all_pages
-
+import os
 
 
 
 
 credentials = dict(
-    refresh_token=REFRESH_TOKEN,
-    lwa_app_id=LWA_APP_ID,
-    lwa_client_secret=LWA_CLIENT_SECRET,
-    aws_access_key=AWS_ACCESS_KEY,
-    aws_secret_key="Uv6V9/05p94ame5I30u3mH0C8KwsD//8E/Znr62w",  
+    refresh_token=os.eviron['REFRESH_TOKEN'],
+    lwa_app_id=os.eviron['LWA_APP_ID'],
+    lwa_client_secret=os.eviron['LWA_CLIENT_SECRET'],
+    aws_access_key=os.eviron['AWS_ACCESS_KEY'],
+    aws_secret_key=os.environ['AWS_SECRET_KEY'],  
     role_arn="arn:aws:iam::108760843519:role/New_Role"
 )
 
